@@ -1,6 +1,5 @@
 const request = require("request");
 
-// Dark sky API
 // DARK_SKY_API_KEY: "9f2c9ce56e5ece772dd73509fd46b26f";
 
 // const url =
