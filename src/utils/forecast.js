@@ -26,7 +26,15 @@ const forecast = (lat, long, callback) => {
     } else if (res.body.error) {
       callback("Unable to find location!", undefined);
     } else {
-      const weatherInfo = `${res.body.daily.data[0].summary} It is currently ${res.body.currently.temperature} degrees out. There is a ${res.body.currently.precipProbability}% chance of rain.`;
+      const weatherInfo = `${res.body.daily.data[0].summary} It is currently ${
+        res.body.currently.temperature
+      } degrees out and the humidity is ${res.body.currently.humidity *
+        100}%. There is a ${res.body.currently.precipProbability *
+        100}% chance of rain. Today the highest temperature is ${
+        res.body.daily.data[0].temperatureMax
+      } degrees and lowest temperature is ${
+        res.body.daily.data[0].temperatureMin
+      } degrees`;
       callback(
         undefined,
         weatherInfo
